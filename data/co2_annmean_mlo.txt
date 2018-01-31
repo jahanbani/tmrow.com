@@ -19,7 +19,7 @@
 # 
 # Contact:   Pieter Tans (303 497 6678; pieter.tans@noaa.gov)
 # 
-# File Creation:  Wed Jul  5 08:56:14 2017
+# File Creation:  Fri Jan  5 16:47:33 2018
 # 
 # RECIPROCITY
 # 
@@ -113,3 +113,4 @@
   2014   398.65     0.12
   2015   400.83     0.12
   2016   404.21     0.12
+  2017   406.53     0.12

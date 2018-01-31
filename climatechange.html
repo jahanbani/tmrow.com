@@ -221,7 +221,7 @@ image: https://user-images.githubusercontent.com/1655848/29027789-6f2358b0-7b82-
             function parseGiss(giss_obj) {
               return giss_obj
                   .split('\n')
-                  .map(function(row, i) { return row.split('     ') })
+                  .map(function(row, i) { return row.split('\t') })
                   .filter(function(row, i) { return +row[0]; })
             }
 
@@ -272,10 +272,10 @@ image: https://user-images.githubusercontent.com/1655848/29027789-6f2358b0-7b82-
                       }
                     },
                     markLine: {
-                      data: [{ type: 'max', x: '70%' }],
+                      data: [{ yAxis: yData[yData.length - 1], x: '70%' }],
                       label: {
                         normal: {
-                          formatter: '2016',
+                          formatter: function() { return xData[xData.length - 1] },
                           position: 'start'
                         },
                       },
@@ -297,7 +297,7 @@ image: https://user-images.githubusercontent.com/1655848/29027789-6f2358b0-7b82-
           </script>
 
           <p>
-            Sixteen of the 17 warmest years have all occurred since 2001 (with the exception of 1998).
+            Seventeen of the 18 warmest years have all occurred since 2001 (with the exception of 1998).
             Furthermore, NOAA reported in August 2016 that each of the previous 16 months <a href="https://www.ncdc.noaa.gov/sotc/global/201607#temp" target="_blank">were the warmest they've ever measured</a>.
             The measured warming has been found to be consistent across <a href="https://data.giss.nasa.gov/gistemp/graphs/" target="_blank">seasons</a> and <a href="https://twitter.com/anttilip/status/891730388497965056" target="_blank">regions</a>.
           </p>
@@ -398,10 +398,10 @@ image: https://user-images.githubusercontent.com/1655848/29027789-6f2358b0-7b82-
                       }
                     },
                     markLine: {
-                      data: [{ type: 'max', x: '70%' }],
+                      data: [{ yAxis: data[data.length - 1][1], x: '70%' }],
                       label: {
                         normal: {
-                          formatter: '2016',
+                          formatter: function() { return data[data.length - 1][0] },
                           position: 'start'
                         },
                       },
@@ -555,7 +555,7 @@ image: https://user-images.githubusercontent.com/1655848/29027789-6f2358b0-7b82-
                     data: [{ x: '70%', yAxis: data[data.length-1][1] }],
                     label: {
                       normal: {
-                        formatter: '2016',
+                        formatter: function() { return data[data.length-1][0] },
                         position: 'start'
                       },
                     },
